@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37502.11 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejecutable_Navegador", "Ejecutable_Navegador\Ejecutable_Navegador.csproj", "{6624FBE7-DBD7-4759-A0BC-1B6EF3D76D60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6624FBE7-DBD7-4759-A0BC-1B6EF3D76D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6624FBE7-DBD7-4759-A0BC-1B6EF3D76D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6624FBE7-DBD7-4759-A0BC-1B6EF3D76D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6624FBE7-DBD7-4759-A0BC-1B6EF3D76D60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35BEA152-D005-4F9A-9CC1-1B0BFE8EA398}
+	EndGlobalSection
+EndGlobal
