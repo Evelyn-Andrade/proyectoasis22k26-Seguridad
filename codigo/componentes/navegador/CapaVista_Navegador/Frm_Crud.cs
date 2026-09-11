@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaControlador_Navegador;
 
 namespace CapaVista_Navegador
 {
@@ -18,13 +17,11 @@ namespace CapaVista_Navegador
         {
             InitializeComponent();
         }
-        string nombreTabla = "tbl_empleados";
-        Controlador controlador = new Controlador();
+
 
         public void actualizarDataGridView()
         {
-            DataTable dtVista = controlador.llenarDgv(nombreTabla);
-            Dgv_datos.DataSource = dtVista;
+           
         }
 
         private void Btn_Consultar_Click(object sender, EventArgs e)
