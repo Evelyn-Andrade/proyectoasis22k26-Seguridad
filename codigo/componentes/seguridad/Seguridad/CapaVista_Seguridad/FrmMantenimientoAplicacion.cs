@@ -126,9 +126,10 @@ namespace CapaVista_Seguridad
                 }
 
                 var Lista = _ModeloMantenimientoApp.SeguridadMetObtenerTodos();
-                if (Lista.Any(Aplicacion => Aplicacion.NombreAplicacion == SeguridadTxtNombreAplicacion.Text))
+                if (Lista.Any(Aplicacion => Aplicacion.NombreAplicacion.Trim().Equals(
+                    SeguridadTxtNombreAplicacion.Text.Trim(), StringComparison.OrdinalIgnoreCase)))
                 {
-                    MessageBox.Show("Ya existe una aplicacion con este nombre");
+                    MessageBox.Show("Ya existe una aplicación con este nombre");
                     return;
                 }
 

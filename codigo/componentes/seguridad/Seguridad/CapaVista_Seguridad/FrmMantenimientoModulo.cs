@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace CapaVista_Seguridad
 {
-    public partial class SeguridadFrmModulo : Form
+    public partial class FrmMantenimientoModulo : Form
     {
         private ClsModeloModulo _ControladorModulo = new ClsModeloModulo();
         private BindingSource bindingSource = new BindingSource();
@@ -42,7 +42,7 @@ namespace CapaVista_Seguridad
         private const int ID_MODULO = 4;      
         private const int ID_APLICACION = 6;
 
-        public SeguridadFrmModulo()
+        public FrmMantenimientoModulo()
         {
             InitializeComponent();
             bindingSource.CurrentChanged += BindingSource_CurrentChanged;

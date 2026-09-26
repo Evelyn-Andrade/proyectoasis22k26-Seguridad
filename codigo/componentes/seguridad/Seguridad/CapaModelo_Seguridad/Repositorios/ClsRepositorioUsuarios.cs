@@ -32,14 +32,14 @@ namespace CapaModelo_Seguridad.Repositorios
         private string _UpdateContrasena;
 
 
-        private string login = "SELECT u.idUsuario, u.idEmpleado, u.nombreUsuario, u.contrasenaUsuario, u.is_active, " +
+        private string _Login = "SELECT u.idUsuario, u.idEmpleado, u.nombreUsuario, u.contrasenaUsuario, u.is_active, " +
              "CONCAT(e.nombresEmpleado, ' ', e.apellidosEmpleado) AS nombreEmpleado " +
              "FROM tblusuario u " +
              "INNER JOIN tblempleado e ON u.idEmpleado = e.idEmpleado " +
              "WHERE u.nombreUsuario=? AND u.is_active=1";
 
 
-        private string rolesPorUsuario = "SELECT ur.idRol, r.nombreRol " +
+        private string _RolesPorUsuario = "SELECT ur.idRol, r.nombreRol " +
              "FROM tblusuariorol ur " +
              "INNER JOIN tblrol r ON ur.idRol = r.idRol " +
              "WHERE ur.idUsuario=?";
@@ -50,7 +50,7 @@ namespace CapaModelo_Seguridad.Repositorios
             var _parametros = new List<OdbcParameter>();
             _parametros.Add(new OdbcParameter("p_usuario", NombreUsuario));
 
-            var tabla = SeguridadMetEjecucionConsulta(login, CommandType.Text, _parametros);
+            var tabla = SeguridadMetEjecucionConsulta(_Login, CommandType.Text, _parametros);
 
             if (tabla.Rows.Count == 0) return null;
 
@@ -70,7 +70,7 @@ namespace CapaModelo_Seguridad.Repositorios
             var Parametros = new List<OdbcParameter>();
             Parametros.Add(new OdbcParameter("p_idUsuario", idUsuario));
 
-            return SeguridadMetEjecucionConsulta(rolesPorUsuario, CommandType.Text, Parametros);
+            return SeguridadMetEjecucionConsulta(_RolesPorUsuario, CommandType.Text, Parametros);
         }
 
         public ClsRepositorioUsuarios()

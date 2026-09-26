@@ -1,6 +1,6 @@
 ﻿namespace CapaVista_Seguridad
 {
-    partial class SeguridadFrmModulo
+    partial class FrmMantenimientoModulo
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -16,7 +16,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeguridadFrmModulo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMantenimientoModulo));
             this.SeguridadLblIdModulo = new System.Windows.Forms.Label();
             this.SeguridadTxtIdModulo = new System.Windows.Forms.TextBox();
             this.SeguridadLblNombreModulo = new System.Windows.Forms.Label();
