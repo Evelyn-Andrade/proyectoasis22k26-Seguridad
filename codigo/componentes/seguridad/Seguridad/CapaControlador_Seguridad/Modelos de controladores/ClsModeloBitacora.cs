@@ -18,14 +18,15 @@
  * ===================================================================
 */
 
+using CapaControlador_Seguridad.Objetos_de_valor;
 using CapaModelo_Seguridad.Contratos;
 using CapaModelo_Seguridad.Entidades;
 using CapaModelo_Seguridad.Repositorios;
-using CapaControlador_Seguridad.Objetos_de_valor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Data.Odbc;
 using System.Linq;
 
 namespace CapaControlador_Seguridad
@@ -83,6 +84,23 @@ namespace CapaControlador_Seguridad
             }
             return Mensaje;
         }
+
+        // NAVEGADOR
+        public string SeguridadMetRegistrarBitacora(int? idUsuario, string accion, string tabla, int idRegistro, string detalles, string ip, OdbcConnection Conexion, OdbcTransaction Transaccion)
+        {
+            var ModeloDatos = new ClsBitacora();
+            ModeloDatos.IdUsuario = idUsuario ?? ClsSesionSeguridad.IdUsuario;
+            ModeloDatos.AccionBitacora = accion;
+            ModeloDatos.TablaBitacora = tabla;
+            ModeloDatos.IdRegistroBitacora = idRegistro;
+            ModeloDatos.DetallesBitacora = detalles;
+            ModeloDatos.IpBitacora = string.IsNullOrEmpty(ip) ? ClsSesionSeguridad.SeguridadMetObtenerIPLocal() : ip;
+            ModeloDatos.FechaHoraBitacora = DateTime.Now;
+
+            _RepositorioBitacora.SeguridadMetAgregar(ModeloDatos, Conexion, Transaccion);
+            return "Bitácora registrada con éxito";
+        }
+        // NAVEGADOR
 
         public static string SeguridadMetRegistrarAccion(string accion, string tabla, int idRegistro, string detalles)
         {

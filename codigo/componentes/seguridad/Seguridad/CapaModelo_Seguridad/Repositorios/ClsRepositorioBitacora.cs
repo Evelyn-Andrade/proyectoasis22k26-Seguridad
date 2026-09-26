@@ -55,6 +55,22 @@ namespace CapaModelo_Seguridad.Repositorios
             return SeguridadMetEjecucionNonQuery(_Insert, Parametros, CommandType.Text);
         }
 
+        // NAVEGADOR REQUEST
+        public int SeguridadMetAgregar(ClsBitacora Entidad, OdbcConnection Conexion, OdbcTransaction Transaccion)
+        {
+            var Parametros = new List<OdbcParameter>();
+            Parametros.Add(new OdbcParameter("p_idUsuario", Entidad.IdUsuario.HasValue ? (object)Entidad.IdUsuario.Value : DBNull.Value));
+            Parametros.Add(new OdbcParameter("p_accionBitacora", Entidad.AccionBitacora));
+            Parametros.Add(new OdbcParameter("p_tablaBitacora", Entidad.TablaBitacora));
+            Parametros.Add(new OdbcParameter("p_idRegistroBitacora", Entidad.IdRegistroBitacora));
+            Parametros.Add(new OdbcParameter("p_detallesBitacora", Entidad.DetallesBitacora));
+            Parametros.Add(new OdbcParameter("p_ipBitacora", Entidad.IpBitacora));
+            Parametros.Add(new OdbcParameter("p_fechaHoraBitacora", Entidad.FechaHoraBitacora.ToString("yyyy-MM-dd HH:mm:ss")));
+
+            return SeguridadMetEjecucionNonQuery(_Insert, Parametros, CommandType.Text, Conexion, Transaccion);
+        }
+        // NAVEGADOR
+
         public int SeguridadMetEditar(ClsBitacora Entidad)
         {
             throw new NotImplementedException("No se permite editar registros de la bitácora.");
