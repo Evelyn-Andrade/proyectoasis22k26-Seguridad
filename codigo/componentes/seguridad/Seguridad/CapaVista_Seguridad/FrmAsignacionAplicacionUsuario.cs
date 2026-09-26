@@ -255,7 +255,7 @@ namespace CapaVista_Seguridad
 
         private void SeguridadBtnAyuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seleccione un Usuario, Módulo y Aplicación y presione Insertar.");
+            Help.ShowHelp(this, "C:/SeguridadAyudas/SeguridadAyudas.chm", "AsigAplUsarios_Seguridad.html");
         }
 
         private void SeguridadBtnInicio_Click(object sender, EventArgs e)
@@ -319,10 +319,6 @@ namespace CapaVista_Seguridad
             SeguridadCboAplicacion.SelectedIndex = -1;
         }
 
-        private void SeguridadBtnAyuda_Click_1(object sender, EventArgs e)
-        {
-            Help.ShowHelp(this, "C:/SeguridadAyudas/SeguridadAyudas.chm", "AsigAplUsarios_Seguridad.html");
-        }
 
         private void SeguridadBtnReporte_Click(object sender, EventArgs e)
         {
